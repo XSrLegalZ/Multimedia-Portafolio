@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>SIAPA · Acceso a tu cuenta</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <div class="screen">
+
+      <!-- ============ TERCIO SUPERIOR (móvil) / COLUMNA IZQUIERDA ~38% (escritorio) — MARCA ============ -->
+      <div class="brand">
+        <svg class="brand__texture" aria-hidden="true" width="100%" height="100%">
+          <defs>
+            <pattern id="droplets" width="52" height="52" patternUnits="userSpaceOnUse">
+              <path d="M26 5 C33 16 39 24 39 31 A13 13 0 0 1 13 31 C13 24 19 16 26 5 Z" fill="white"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#droplets)"/>
+        </svg>
+
+        <div class="brand__top">
+          <div class="brand__logo" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C12 2 5 11.5 5 16a7 7 0 0 0 14 0C19 11.5 12 2 12 2Z" fill="#CBF7ED"/>
+            </svg>
+          </div>
+          <div>
+            <p class="brand__name">SIAPA</p>
+            <p class="brand__sub">Sistema Interconectado de Alcantarillado y Agua Potable</p>
+          </div>
+        </div>
+
+        <div class="brand__message">
+          <h1 class="brand__headline">El agua de tu casa, bajo tu control.</h1>
+          <p class="brand__body">Consulta tu recibo, reporta fugas y da seguimiento a tu contrato desde un mismo lugar, sin hacer filas.</p>
+        </div>
+
+        <svg class="brand__wave" viewBox="0 0 500 80" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,40 C120,80 220,0 340,30 C400,45 460,20 500,35 L500,80 L0,80 Z" fill="rgba(203,247,237,0.18)"/>
+        </svg>
+      </div>
+
+      <!-- ============ DOS TERCIOS INFERIORES (móvil) / COLUMNA DERECHA ~62% (escritorio) — FORMULARIO ============ -->
+      <div class="auth">
+        <div class="auth__inner">
+
+          <div class="tabs" role="tablist" aria-label="Selector de acceso">
+            <div id="tabIndicator" class="tabs__indicator"></div>
+            <button id="tabLoginBtn" class="tab" type="button" role="tab" aria-selected="true" aria-controls="panelLogin">Iniciar sesión</button>
+            <button id="tabRegisterBtn" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panelRegister">Crear cuenta</button>
+          </div>
+
+          <!-- ===== LOGIN — solo usuario y contraseña ===== -->
+          <div id="panelLogin" class="panel" role="tabpanel" aria-labelledby="tabLoginBtn">
+            <h2>Bienvenido de nuevo</h2>
+            <p class="auth__lead">Ingresa con tu usuario y contraseña.</p>
+
+            <form id="formLogin" novalidate onsubmit="return false;">
+              <div class="field">
+                <label for="loginUser">Usuario</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M5 19.5c1.2-3.4 4-5 7-5s5.8 1.6 7 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <input id="loginUser" type="text" required autocomplete="username" placeholder="Tu usuario">
+                </div>
+              </div>
+
+              <div class="field field--pw">
+                <label for="loginPass">Contraseña</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                  </span>
+                  <input id="loginPass" type="password" required autocomplete="current-password" placeholder="••••••••">
+                  <button type="button" class="pw-toggle" aria-pressed="false" aria-label="Mostrar contraseña" data-toggle-for="loginPass">
+                    <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none;">
+                      <path d="M3 3l18 18M9.9 9.9a2.6 2.6 0 0 0 3.6 3.6M6.2 6.4C3.9 8 2 12 2 12s3.6 6.5 10 6.5c2 0 3.6-.6 4.9-1.4M11 5.6c.3 0 .7-.1 1-.1 6.4 0 10 6.5 10 6.5a15 15 0 0 1-2.3 3.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="row-end">
+                <a href="#" class="link">¿Olvidaste tu contraseña?</a>
+              </div>
+
+              <button type="submit" class="btn-cta">Entrar a mi cuenta</button>
+            </form>
+
+            <p class="switch-line">¿No tienes cuenta? <button type="button" data-switch="register">Crear una</button></p>
+          </div>
+
+          <!-- ===== REGISTRO — usuario, contraseña, confirmar contraseña, correo, confirmar correo ===== -->
+          <div id="panelRegister" class="panel" role="tabpanel" aria-labelledby="tabRegisterBtn" hidden>
+            <h2>Crea tu cuenta</h2>
+            <p class="auth__lead">Regístrate para dar seguimiento a tu contrato de agua.</p>
+
+            <form id="formRegister" novalidate onsubmit="return false;">
+              <div class="field">
+                <label for="regUser">Usuario</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M5 19.5c1.2-3.4 4-5 7-5s5.8 1.6 7 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <input id="regUser" type="text" required autocomplete="username" placeholder="Elige un usuario">
+                </div>
+              </div>
+
+              <div class="field field--pw">
+                <label for="regPass">Contraseña</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                  </span>
+                  <input id="regPass" type="password" required minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+                  <button type="button" class="pw-toggle" aria-pressed="false" aria-label="Mostrar contraseña" data-toggle-for="regPass">
+                    <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none;">
+                      <path d="M3 3l18 18M9.9 9.9a2.6 2.6 0 0 0 3.6 3.6M6.2 6.4C3.9 8 2 12 2 12s3.6 6.5 10 6.5c2 0 3.6-.6 4.9-1.4M11 5.6c.3 0 .7-.1 1-.1 6.4 0 10 6.5 10 6.5a15 15 0 0 1-2.3 3.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="field field--pw">
+                <label for="regPassConfirm">Confirmar contraseña</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                  </span>
+                  <input id="regPassConfirm" type="password" required minlength="8" autocomplete="new-password" placeholder="Repite tu contraseña">
+                  <button type="button" class="pw-toggle" aria-pressed="false" aria-label="Mostrar contraseña" data-toggle-for="regPassConfirm">
+                    <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none;">
+                      <path d="M3 3l18 18M9.9 9.9a2.6 2.6 0 0 0 3.6 3.6M6.2 6.4C3.9 8 2 12 2 12s3.6 6.5 10 6.5c2 0 3.6-.6 4.9-1.4M11 5.6c.3 0 .7-.1 1-.1 6.4 0 10 6.5 10 6.5a15 15 0 0 1-2.3 3.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <p class="field__error" id="errPassConfirm" hidden>Las contraseñas no coinciden.</p>
+              </div>
+
+              <div class="field">
+                <label for="regEmail">Correo electrónico</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M4 6.5l8 6.2 8-6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <input id="regEmail" type="email" required autocomplete="email" placeholder="correo@ejemplo.com">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="regEmailConfirm">Confirmar correo electrónico</label>
+                <div class="field__control">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M4 6.5l8 6.2 8-6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <input id="regEmailConfirm" type="email" required autocomplete="email" placeholder="Repite tu correo">
+                </div>
+                <p class="field__error" id="errEmailConfirm" hidden>Los correos no coinciden.</p>
+              </div>
+
+              <label class="checkbox-row">
+                <input id="regTerms" type="checkbox" required>
+                <span>Acepto los <a href="#" class="link" style="font-weight:600;">términos de uso</a> y el <a href="#" class="link" style="font-weight:600;">aviso de privacidad</a> de SIAPA.</span>
+              </label>
+
+              <button type="submit" class="btn-cta">Crear mi cuenta</button>
+            </form>
+
+            <p class="switch-line">¿Ya tienes cuenta? <button type="button" data-switch="login">Inicia sesión</button></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
